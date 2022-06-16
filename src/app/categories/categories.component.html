@@ -1,0 +1,16 @@
+<div *ngIf="(categories$ | async) as categoryList">
+
+  <mat-card style="margin-top: 24px">
+    <table>
+
+      <tbody>
+        <tr *ngFor="let category of categoryList">
+          <td class="id">{{ category.id }}</td>
+          <td>{{ category.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+
+
+</div>

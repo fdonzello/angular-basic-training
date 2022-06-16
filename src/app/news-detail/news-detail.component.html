@@ -1,0 +1,8 @@
+<ng-container *ngIf="(news$ | async ) as news">
+  <h1>{{ news.title }}</h1>
+
+  <p>{{ news.description }}</p>
+
+  <a mat-flat-button [routerLink]="['/news', news.id, 'edit']">EDIT</a>
+  <button style="margin-left: 16px;" mat-flat-button color="warn" (click)="delete()">DELETE</button>
+</ng-container>

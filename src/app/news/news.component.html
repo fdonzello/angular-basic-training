@@ -1,0 +1,18 @@
+<div *ngIf="(news$ | async) as newsList">
+
+  <a mat-raised-button routerLink="/news/create">CREATE</a>
+
+  <mat-card style="margin-top: 24px">
+    <table>
+
+      <tbody>
+        <tr *ngFor="let news of newsList">
+          <td class="id"><a [routerLink]="['/news', news.id]">{{ news.id }}</a></td>
+          <td>{{ news.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+
+
+</div>
