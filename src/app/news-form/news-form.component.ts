@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { News } from '../models';
@@ -15,9 +15,9 @@ export class NewsFormComponent implements OnInit, OnDestroy {
   id: number | undefined;
   s: Subscription | undefined;
 
-  form = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(1)]),
+  form = new UntypedFormGroup({
+    title: new UntypedFormControl('', [Validators.required, Validators.minLength(1)]),
+    description: new UntypedFormControl('', [Validators.required, Validators.minLength(1)]),
   });
 
   constructor(
