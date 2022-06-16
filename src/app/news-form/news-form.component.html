@@ -12,6 +12,21 @@
     <mat-error *ngIf="form.get('description')?.invalid">Invalid value</mat-error>
   </mat-form-field>
 
+  <div formGroupName="category">
+    <h3>Category</h3>
+
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput formControlName="id">
+      <mat-error *ngIf="categoryGroup.get('id')?.invalid">Invalid value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="margin-left: 16px;">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="categoryGroup.get('name')?.invalid">Invalid value</mat-error>
+    </mat-form-field>
+  </div>
 
   <button mat-raised-button color="accent">SAVE</button>
 

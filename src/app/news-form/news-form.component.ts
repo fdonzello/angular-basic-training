@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { News } from '../models';
@@ -15,9 +15,13 @@ export class NewsFormComponent implements OnInit, OnDestroy {
   id: number | undefined;
   s: Subscription | undefined;
 
-  form = new UntypedFormGroup({
-    title: new UntypedFormControl('', [Validators.required, Validators.minLength(1)]),
-    description: new UntypedFormControl('', [Validators.required, Validators.minLength(1)]),
+  form = new FormGroup({
+    title: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    category: new FormGroup({
+      id: new FormControl(0, [Validators.required, Validators.minLength(1)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(1)])
+    })
   });
 
   constructor(
@@ -45,8 +49,16 @@ export class NewsFormComponent implements OnInit, OnDestroy {
       this.form.patchValue({
         title: news.title,
         description: news.description,
+        category: {
+          id: news.category?.id,
+          name: news.category?.name,
+        }
       });
     })
+  }
+
+  get categoryGroup() {
+    return this.form.get('category') as FormGroup;
   }
 
   submit() {
@@ -55,8 +67,12 @@ export class NewsFormComponent implements OnInit, OnDestroy {
     }
 
     const news: News = {
-      title: this.form.value.title,
-      description: this.form.value.description,
+      title: this.form.value.title!,
+      description: this.form.value.description!,
+      category: {
+        id: this.form.value.category!.id!,
+        name: this.form.value.category!.name!
+      }
     }
 
     if (this.isEditMode) {

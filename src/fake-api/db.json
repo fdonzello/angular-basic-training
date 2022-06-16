@@ -9,17 +9,13 @@
   ],
   "news": [
     {
-      "id": 1,
       "title": "ULB denounces Brussels’ exclusion from commuting allowance",
       "description": "Excluding people wishing to attend a tertiary institution in Brussels from a new allowance for students with long commutes exposes the very great dangers of the regionalisation of community matters, Brussels Free University (ULB) Chancellor Yvon Englert said on Monday in Le Soir daily. Also weighing in on the issue was Rudy Demotte, Prime Minister of the Wallonia-Brussels Federation, who said the measure was an attack on the freedom to choose one’s university",
-      "author": {
-        "id": 1,
-        "name": "Christopher Vincent"
-      },
       "category": {
         "id": 1,
-        "name": "I don't know"
-      }
+        "name": "I don't know!!!"
+      },
+      "id": 1
     },
     {
       "id": 2,
@@ -43,6 +39,15 @@
       "title": "ULB denounces Brussels’ exclusion from commuting allowance!!!",
       "description": "Excluding people wishing to attend a tertiary institution in Brussels from a new allowance for students with long commutes exposes the very great dangers of the regionalisation of community matters, Brussels Free University (ULB) Chancellor Yvon Englert said on Monday in Le Soir daily. Also weighing in on the issue was Rudy Demotte, Prime Minister of the Wallonia-Brussels Federation, who said the measure was an attack on the freedom to choose one’s university",
       "id": 4
+    },
+    {
+      "title": "test",
+      "description": "test2",
+      "category": {
+        "id": "6",
+        "name": "test2"
+      },
+      "id": 5
     }
   ],
   "authors": [
